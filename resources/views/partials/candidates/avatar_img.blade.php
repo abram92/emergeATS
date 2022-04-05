@@ -1,0 +1,1 @@
+						<img src="{{ $candidate->user->avatar && (file_exists (public_path ('avatars/'.$candidate->user->avatar))) ? url('avatars/'.$candidate->user->avatar) : url('avatars/defaultAvatar.png') }}" id="user-avatar">

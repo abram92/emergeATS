@@ -1,0 +1,249 @@
+.chosen-container .chosen-drop { width: 100%!important; }
+
+.sticky-top.is_stuck.is_stuck_show img {
+max-width: 30px;
+    max-height: 30px; 
+}
+
+.profile_pic_list img {
+max-width: 30px;
+    max-height: 30px; 
+}
+
+.sticky-top img {
+max-width: 100px;
+    max-height: 100px; 
+overflow:hidden;
+}
+
+div.sticky1 {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.content-wrapper {
+   height : 100%;
+   background-repeat: no-repeat;
+   background-image: linear-gradient(#d99c0d, #695c40);
+   background-color: #695c40;
+}
+
+
+.cornered-lr {
+   position: absolute;
+   bottom: -10px;
+   text-align: right;
+   color: black;
+   font-size: 11px;
+}
+
+.cornered-ll {
+   position: absolute;
+   bottom: -10px;
+   text-align: left;
+   color: black;
+   font-size: 11px;
+}
+
+
+.cornered-tr {
+   position: absolute;
+   top: -10px;
+   text-align: right;
+   color: black;
+   font-size: 11px;
+}
+
+.cornered-tl {
+   position: absolute;
+   top: -10px;
+   text-align: left;
+   color: black;
+   font-size: 11px;
+}
+
+.card {
+   max-width:100%;
+}
+
+.card-text {
+   white-space: pre-wrap;
+   word-wrap: break-word;
+}
+
+.card-title {
+   position: relative;
+}
+  
+.card-title::after {
+   content: "-";  /* \f107 */
+   color: #333;
+   top: 10px;
+   right: 15px;
+   position: absolute;
+   font-size:1.3em;
+   font-family: "Font Awesome 5 free"
+}
+
+
+.card-title[aria-expanded="true"]::after {
+   content: "+";  /* \f106 */
+}
+
+.candidate-icon {
+   color: #f5b7b1;
+}
+
+.client-icon {
+   color: #aed6f1;
+}
+
+.job-icon {
+   color: #abebc6;
+}
+
+.candidate {
+   background-color: #f5b7b1;
+}
+
+.candidate {
+   background-image: linear-gradient (red, #f5b7b1);
+   color: white;
+}
+
+.client {
+   background-color: #aed6f1;
+}
+
+.job {
+   background-color: #abebc6;
+}
+
+.fixed-bottom {
+   padding-top: 10px;
+   padding-bottom: 10px;
+   background-color: #333333;
+}
+
+.form-horizontal .form-group {
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.dropzone {
+   background: grey;
+   height :10px;
+   max-height: 50px;
+}
+
+
+pre.collapse:not(.show) {
+   height: 200px !important;
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp:15;
+   -webkit-box-orient: vertical;
+}
+
+pre.collapsing {
+   min-height:200px !important;
+}
+
+a.readmore.collapsed:after {
+   content: '+ Read More';
+}
+
+a.readmore:not(.collapsed):after {
+   content: '- Read Less';
+}
+
+
+.dt1[data-count]:after{
+   position: absolute;
+   right: 0%;
+   top: 0%;
+   content: attr(data-count);
+   font-size: 66%;
+   padding:.6em;
+   border-radius:100%;
+   line-height:.8em;
+   color:white;
+   background:red;
+   text-align:center;
+   min-width: 1emm;
+   font-weight:bold;
+}
+
+.popover {
+   white-space: pre-wrap;
+   max-height: 900px;
+   max-width : none;
+   overflow-y: auto;
+}
+
+popover.bottom .arrow {
+   visibility:hidden;
+}
+
+.disableClick{
+   pointer-events: none;
+}
+
+.childcomment {
+   color : red;
+   white-space : pre;
+}
+
+.childsendcv {
+   color: blue;
+   white-space : pre;
+}
+
+.diveven  {background-color:#d6dce6}
+.divodd  {background-color:#c1c9d8}
+.uploaddate {
+  float: right;
+}
+.finalalert  {background-color:#f8ed62}
+
+.alertdiv1    {margin: 4px; box-shadow: 2px 4px 7px 0 skyblue;}
+.alertdiv2    {margin: 4px; box-shadow: 2px 4px 7px 0 coral;}
+.alertdiv3    {margin: 4px; box-shadow: 2px 4px 7px 0 crimson;}
+
+
+.modal-full {
+    min-width: 100%;
+    margin: 0;
+}
+
+.modal-full .modal-content {
+    min-height: 100vh;
+}
+
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+

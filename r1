@@ -1,0 +1,148 @@
++--------+-----------+------------------------------+--------------------------------+------------------------------------------------------------------------+----------------+
+| Domain | Method    | URI                          | Name                           | Action                                                                 | Middleware     |
++--------+-----------+------------------------------+--------------------------------+------------------------------------------------------------------------+----------------+
+|        | GET|HEAD  | /                            |                                | Closure                                                                | web            |
+|        | GET|HEAD  | aliascategories              | admin.aliascategories.index    | App\Http\Controllers\AliasCategoryController@index                     | web,auth       |
+|        | GET|HEAD  | aliascategories/add          | admin.aliascategories.add      | App\Http\Controllers\AliasCategoryController@create                    | web,auth       |
+|        | POST      | aliascategories/add          |                                | App\Http\Controllers\AliasCategoryController@store                     | web,auth       |
+|        | GET|HEAD  | aliascategories/updateOrder  |                                | App\Http\Controllers\AliasCategoryController@updateOrder               | web            |
+|        | GET|HEAD  | aliascategories/{id}         | admin.aliascategories.show     | App\Http\Controllers\AliasCategoryController@show                      | web,auth       |
+|        | DELETE    | aliascategories/{id}/delete  | admin.aliascategories.destroy  | App\Http\Controllers\AliasCategoryController@destroy                   | web,auth       |
+|        | GET|HEAD  | aliascategories/{id}/edit    | admin.aliascategories.edit     | App\Http\Controllers\AliasCategoryController@edit                      | web,auth       |
+|        | POST      | aliascategories/{id}/edit    |                                | App\Http\Controllers\AliasCategoryController@update                    | web,auth       |
+|        | GET|HEAD  | api/user                     |                                | Closure                                                                | api,auth:api   |
+|        | GET|HEAD  | candidatelevels              | admin.candidatelevels.index    | App\Http\Controllers\CandidateLevelController@index                    | web,role:Admin |
+|        | GET|HEAD  | candidatelevels/add          | admin.candidatelevels.add      | App\Http\Controllers\CandidateLevelController@create                   | web,role:Admin |
+|        | POST      | candidatelevels/add          |                                | App\Http\Controllers\CandidateLevelController@store                    | web,role:Admin |
+|        | GET|HEAD  | candidatelevels/updateOrder  |                                | App\Http\Controllers\CandidateLevelController@updateOrder              | web            |
+|        | GET|HEAD  | candidatelevels/{id}         | admin.candidatelevels.show     | App\Http\Controllers\CandidateLevelController@show                     | web,role:Admin |
+|        | DELETE    | candidatelevels/{id}/delete  | admin.candidatelevels.destroy  | App\Http\Controllers\CandidateLevelController@destroy                  | web,role:Admin |
+|        | POST      | candidatelevels/{id}/edit    |                                | App\Http\Controllers\CandidateLevelController@update                   | web,role:Admin |
+|        | GET|HEAD  | candidatelevels/{id}/edit    | admin.candidatelevels.edit     | App\Http\Controllers\CandidateLevelController@edit                     | web,role:Admin |
+|        | GET|HEAD  | candidateratings             | admin.candidateratings.index   | App\Http\Controllers\CandidateRatingController@index                   | web,role:Admin |
+|        | POST      | candidateratings/add         |                                | App\Http\Controllers\CandidateRatingController@store                   | web,role:Admin |
+|        | GET|HEAD  | candidateratings/add         | admin.candidateratings.add     | App\Http\Controllers\CandidateRatingController@create                  | web,role:Admin |
+|        | GET|HEAD  | candidateratings/updateOrder |                                | App\Http\Controllers\CandidateRatingController@updateOrder             | web            |
+|        | GET|HEAD  | candidateratings/{id}        | admin.candidateratings.show    | App\Http\Controllers\CandidateRatingController@show                    | web,role:Admin |
+|        | DELETE    | candidateratings/{id}/delete | admin.candidateratings.destroy | App\Http\Controllers\CandidateRatingController@destroy                 | web,role:Admin |
+|        | GET|HEAD  | candidateratings/{id}/edit   | admin.candidateratings.edit    | App\Http\Controllers\CandidateRatingController@edit                    | web,role:Admin |
+|        | POST      | candidateratings/{id}/edit   |                                | App\Http\Controllers\CandidateRatingController@update                  | web,role:Admin |
+|        | GET|HEAD  | candidates                   | candidates.index               | App\Http\Controllers\CandidateController@index                         | web,auth       |
+|        | POST      | candidates                   | candidates.store               | App\Http\Controllers\CandidateController@store                         | web,auth       |
+|        | GET|HEAD  | candidates/create            | candidates.create              | App\Http\Controllers\CandidateController@create                        | web,auth       |
+|        | GET|HEAD  | candidates/{candidate}       | candidates.show                | App\Http\Controllers\CandidateController@show                          | web,auth       |
+|        | DELETE    | candidates/{candidate}       | candidates.destroy             | App\Http\Controllers\CandidateController@destroy                       | web,auth       |
+|        | PUT|PATCH | candidates/{candidate}       | candidates.update              | App\Http\Controllers\CandidateController@update                        | web,auth       |
+|        | GET|HEAD  | candidates/{candidate}/edit  | candidates.edit                | App\Http\Controllers\CandidateController@edit                          | web,auth       |
+|        | GET|HEAD  | candidatestatus              | admin.candidatestatus.index    | App\Http\Controllers\CandidateStatusController@index                   | web,role:Admin |
+|        | POST      | candidatestatus/add          |                                | App\Http\Controllers\CandidateStatusController@store                   | web,role:Admin |
+|        | GET|HEAD  | candidatestatus/add          | admin.candidatestatus.add      | App\Http\Controllers\CandidateStatusController@create                  | web,role:Admin |
+|        | GET|HEAD  | candidatestatus/updateOrder  |                                | App\Http\Controllers\CandidateStatusController@updateOrder             | web            |
+|        | GET|HEAD  | candidatestatus/{id}         | admin.candidatestatus.show     | App\Http\Controllers\CandidateStatusController@show                    | web,role:Admin |
+|        | DELETE    | candidatestatus/{id}/delete  | admin.candidatestatus.destroy  | App\Http\Controllers\CandidateStatusController@destroy                 | web,role:Admin |
+|        | POST      | candidatestatus/{id}/edit    |                                | App\Http\Controllers\CandidateStatusController@update                  | web,role:Admin |
+|        | GET|HEAD  | candidatestatus/{id}/edit    | admin.candidatestatus.edit     | App\Http\Controllers\CandidateStatusController@edit                    | web,role:Admin |
+|        | GET|HEAD  | clients                      | clients.index                  | App\Http\Controllers\ClientController@index                            | web,auth       |
+|        | POST      | clients                      | clients.store                  | App\Http\Controllers\ClientController@store                            | web,auth       |
+|        | GET|HEAD  | clients/create               | clients.create                 | App\Http\Controllers\ClientController@create                           | web,auth       |
+|        | GET|HEAD  | clients/{client}             | clients.show                   | App\Http\Controllers\ClientController@show                             | web,auth       |
+|        | DELETE    | clients/{client}             | clients.destroy                | App\Http\Controllers\ClientController@destroy                          | web,auth       |
+|        | PUT|PATCH | clients/{client}             | clients.update                 | App\Http\Controllers\ClientController@update                           | web,auth       |
+|        | GET|HEAD  | clients/{client}/edit        | clients.edit                   | App\Http\Controllers\ClientController@edit                             | web,auth       |
+|        | GET|HEAD  | clients/{id}/fileupload      |                                | App\Http\Controllers\ClientController@fileupload                       | web,auth       |
+|        | POST      | clients/{id}/fileupload      |                                | App\Http\Controllers\ClientController@fileupload                       | web,auth       |
+|        | GET|HEAD  | clientstatus                 | admin.clientstatus.index       | App\Http\Controllers\ClientStatusController@index                      | web,role:Admin |
+|        | POST      | clientstatus/add             |                                | App\Http\Controllers\ClientStatusController@store                      | web,role:Admin |
+|        | GET|HEAD  | clientstatus/add             | admin.clientstatus.add         | App\Http\Controllers\ClientStatusController@create                     | web,role:Admin |
+|        | GET|HEAD  | clientstatus/updateOrder     |                                | App\Http\Controllers\ClientStatusController@updateOrder                | web            |
+|        | GET|HEAD  | clientstatus/{id}            | admin.clientstatus.show        | App\Http\Controllers\ClientStatusController@show                       | web,role:Admin |
+|        | DELETE    | clientstatus/{id}/delete     | admin.clientstatus.destroy     | App\Http\Controllers\ClientStatusController@destroy                    | web,role:Admin |
+|        | GET|HEAD  | clientstatus/{id}/edit       | admin.clientstatus.edit        | App\Http\Controllers\ClientStatusController@edit                       | web,role:Admin |
+|        | POST      | clientstatus/{id}/edit       |                                | App\Http\Controllers\ClientStatusController@update                     | web,role:Admin |
+|        | GET|HEAD  | eestatus                     | admin.eestatus.index           | App\Http\Controllers\EEStatusController@index                          | web,role:Admin |
+|        | GET|HEAD  | eestatus/add                 | admin.eestatus.add             | App\Http\Controllers\EEStatusController@create                         | web,role:Admin |
+|        | POST      | eestatus/add                 |                                | App\Http\Controllers\EEStatusController@store                          | web,role:Admin |
+|        | GET|HEAD  | eestatus/updateOrder         |                                | App\Http\Controllers\EEStatusController@updateOrder                    | web            |
+|        | GET|HEAD  | eestatus/{id}                | admin.eestatus.show            | App\Http\Controllers\EEStatusController@show                           | web,role:Admin |
+|        | DELETE    | eestatus/{id}/delete         | admin.eestatus.destroy         | App\Http\Controllers\EEStatusController@destroy                        | web,role:Admin |
+|        | GET|HEAD  | eestatus/{id}/edit           | admin.eestatus.edit            | App\Http\Controllers\EEStatusController@edit                           | web,role:Admin |
+|        | POST      | eestatus/{id}/edit           |                                | App\Http\Controllers\EEStatusController@update                         | web,role:Admin |
+|        | GET|HEAD  | event                        |                                | App\Http\Controllers\EventController@index                             | web,auth       |
+|        | POST      | event/add                    |                                | App\Http\Controllers\EventController@store                             | web,auth       |
+|        | GET|HEAD  | event/add                    |                                | App\Http\Controllers\EventController@createEvent                       | web,auth       |
+|        | GET|HEAD  | eventtypes                   | admin.eventtypes.index         | App\Http\Controllers\EventTypeController@index                         | web,auth       |
+|        | GET|HEAD  | eventtypes/add               | admin.eventtypes.add           | App\Http\Controllers\EventTypeController@create                        | web,auth       |
+|        | POST      | eventtypes/add               |                                | App\Http\Controllers\EventTypeController@store                         | web,auth       |
+|        | GET|HEAD  | eventtypes/updateOrder       |                                | App\Http\Controllers\EventTypeController@updateOrder                   | web            |
+|        | GET|HEAD  | eventtypes/{id}              | admin.eventtypes.show          | App\Http\Controllers\EventTypeController@show                          | web,auth       |
+|        | DELETE    | eventtypes/{id}/delete       | admin.eventtypes.destroy       | App\Http\Controllers\EventTypeController@destroy                       | web,auth       |
+|        | GET|HEAD  | eventtypes/{id}/edit         | admin.eventtypes.edit          | App\Http\Controllers\EventTypeController@edit                          | web,auth       |
+|        | POST      | eventtypes/{id}/edit         |                                | App\Http\Controllers\EventTypeController@update                        | web,auth       |
+|        | GET|HEAD  | file/upload                  |                                | App\Http\Controllers\FileUploadController@fileCreate                   | web,auth       |
+|        | POST      | file/upload/store            |                                | App\Http\Controllers\FileUploadController@fileStore                    | web,auth       |
+|        | POST      | file/{$id}/delete            |                                | App\Http\Controllers\FileUploadController@fileDestroy                  | web,auth       |
+|        | GET|HEAD  | file/{$id}/download          |                                | App\Http\Controllers\DataFileController@download                       | web,auth       |
+|        | GET|HEAD  | home                         | home                           | Closure                                                                | web,auth       |
+|        | POST      | jobs                         | jobs.store                     | App\Http\Controllers\JobAdController@store                             | web,auth       |
+|        | GET|HEAD  | jobs                         | jobs.index                     | App\Http\Controllers\JobAdController@index                             | web,auth       |
+|        | GET|HEAD  | jobs/create                  | jobs.create                    | App\Http\Controllers\JobAdController@create                            | web,auth       |
+|        | DELETE    | jobs/{job}                   | jobs.destroy                   | App\Http\Controllers\JobAdController@destroy                           | web,auth       |
+|        | PUT|PATCH | jobs/{job}                   | jobs.update                    | App\Http\Controllers\JobAdController@update                            | web,auth       |
+|        | GET|HEAD  | jobs/{job}                   | jobs.show                      | App\Http\Controllers\JobAdController@show                              | web,auth       |
+|        | GET|HEAD  | jobs/{job}/edit              | jobs.edit                      | App\Http\Controllers\JobAdController@edit                              | web,auth       |
+|        | GET|HEAD  | jobstatus                    | admin.jobstatus.index          | App\Http\Controllers\JobStatusController@index                         | web,role:Admin |
+|        | GET|HEAD  | jobstatus/add                | admin.jobstatus.add            | App\Http\Controllers\JobStatusController@create                        | web,role:Admin |
+|        | POST      | jobstatus/add                |                                | App\Http\Controllers\JobStatusController@store                         | web,role:Admin |
+|        | GET|HEAD  | jobstatus/updateOrder        |                                | App\Http\Controllers\JobStatusController@updateOrder                   | web            |
+|        | GET|HEAD  | jobstatus/{id}               | admin.jobstatus.show           | App\Http\Controllers\JobStatusController@show                          | web,role:Admin |
+|        | DELETE    | jobstatus/{id}/delete        | admin.jobstatus.destroy        | App\Http\Controllers\JobStatusController@destroy                       | web,role:Admin |
+|        | GET|HEAD  | jobstatus/{id}/edit          | admin.jobstatus.edit           | App\Http\Controllers\JobStatusController@edit                          | web,role:Admin |
+|        | POST      | jobstatus/{id}/edit          |                                | App\Http\Controllers\JobStatusController@update                        | web,role:Admin |
+|        | POST      | jobtitles                    | admin.jobtitles.index          | App\Http\Controllers\JobTitleController@index                          | web,role:Admin |
+|        | GET|HEAD  | jobtitles                    | admin.jobtitles.index          | App\Http\Controllers\JobTitleController@index                          | web,role:Admin |
+|        | POST      | jobtitles/add                |                                | App\Http\Controllers\JobTitleController@store                          | web,role:Admin |
+|        | GET|HEAD  | jobtitles/add                | admin.jobtitles.add            | App\Http\Controllers\JobTitleController@create                         | web,role:Admin |
+|        | GET|HEAD  | jobtitles/{id}               | admin.jobtitles.show           | App\Http\Controllers\JobTitleController@show                           | web,role:Admin |
+|        | DELETE    | jobtitles/{id}/delete        | admin.jobtitles.destroy        | App\Http\Controllers\JobTitleController@destroy                        | web,role:Admin |
+|        | POST      | jobtitles/{id}/edit          |                                | App\Http\Controllers\JobTitleController@update                         | web,role:Admin |
+|        | GET|HEAD  | jobtitles/{id}/edit          | admin.jobtitles.edit           | App\Http\Controllers\JobTitleController@edit                           | web,role:Admin |
+|        | GET|HEAD  | jobtypes                     | admin.jobtypes.index           | App\Http\Controllers\JobTypeController@index                           | web,role:Admin |
+|        | GET|HEAD  | jobtypes/add                 | admin.jobtypes.add             | App\Http\Controllers\JobTypeController@create                          | web,role:Admin |
+|        | POST      | jobtypes/add                 |                                | App\Http\Controllers\JobTypeController@store                           | web,role:Admin |
+|        | GET|HEAD  | jobtypes/updateOrder         |                                | App\Http\Controllers\JobTypeController@updateOrder                     | web            |
+|        | GET|HEAD  | jobtypes/{id}                | admin.jobtypes.show            | App\Http\Controllers\JobTypeController@show                            | web,role:Admin |
+|        | DELETE    | jobtypes/{id}/delete         | admin.jobtypes.destroy         | App\Http\Controllers\JobTypeController@destroy                         | web,role:Admin |
+|        | POST      | jobtypes/{id}/edit           |                                | App\Http\Controllers\JobTypeController@update                          | web,role:Admin |
+|        | GET|HEAD  | jobtypes/{id}/edit           | admin.jobtypes.edit            | App\Http\Controllers\JobTypeController@edit                            | web,role:Admin |
+|        | GET|HEAD  | locations                    | admin.locations.index          | App\Http\Controllers\LocationController@index                          | web,role:Admin |
+|        | POST      | locations/add                |                                | App\Http\Controllers\LocationController@store                          | web,role:Admin |
+|        | GET|HEAD  | locations/add                | admin.locations.add            | App\Http\Controllers\LocationController@create                         | web,role:Admin |
+|        | GET|HEAD  | locations/{id}               | admin.locations.show           | App\Http\Controllers\LocationController@show                           | web,role:Admin |
+|        | DELETE    | locations/{id}/delete        | admin.locations.destroy        | App\Http\Controllers\LocationController@destroy                        | web,role:Admin |
+|        | GET|HEAD  | locations/{id}/edit          | admin.locations.edit           | App\Http\Controllers\LocationController@edit                           | web,role:Admin |
+|        | POST      | locations/{id}/edit          |                                | App\Http\Controllers\LocationController@update                         | web,role:Admin |
+|        | POST      | login                        |                                | App\Http\Controllers\Auth\LoginController@login                        | web,guest      |
+|        | GET|HEAD  | login                        | login                          | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest      |
+|        | POST      | logout                       | logout                         | App\Http\Controllers\Auth\LoginController@logout                       | web            |
+|        | POST      | password/email               | password.email                 | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest      |
+|        | POST      | password/reset               | password.update                | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest      |
+|        | GET|HEAD  | password/reset               | password.request               | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest      |
+|        | GET|HEAD  | password/reset/{token}       | password.reset                 | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest      |
+|        | POST      | push                         |                                | App\Http\Controllers\PushController@store                              | web,auth       |
+|        | GET|HEAD  | push                         | push                           | App\Http\Controllers\PushController@push                               | web,auth       |
+|        | GET|HEAD  | salarycategories             | admin.salarycategories.index   | App\Http\Controllers\SalaryCategoryController@index                    | web,auth       |
+|        | GET|HEAD  | salarycategories/add         | admin.salarycategories.add     | App\Http\Controllers\SalaryCategoryController@create                   | web,auth       |
+|        | POST      | salarycategories/add         |                                | App\Http\Controllers\SalaryCategoryController@store                    | web,auth       |
+|        | GET|HEAD  | salarycategories/updateOrder |                                | App\Http\Controllers\SalaryCategoryController@updateOrder              | web            |
+|        | GET|HEAD  | salarycategories/{id}        | admin.salarycategories.show    | App\Http\Controllers\SalaryCategoryController@show                     | web,auth       |
+|        | DELETE    | salarycategories/{id}/delete | admin.salarycategories.destroy | App\Http\Controllers\SalaryCategoryController@destroy                  | web,auth       |
+|        | GET|HEAD  | salarycategories/{id}/edit   | admin.salarycategories.edit    | App\Http\Controllers\SalaryCategoryController@edit                     | web,auth       |
+|        | POST      | salarycategories/{id}/edit   |                                | App\Http\Controllers\SalaryCategoryController@update                   | web,auth       |
+|        | POST      | users                        | users.store                    | App\Http\Controllers\UserController@store                              | web,auth       |
+|        | GET|HEAD  | users                        | users.index                    | App\Http\Controllers\UserController@index                              | web,auth       |
+|        | GET|HEAD  | users/create                 | users.create                   | App\Http\Controllers\UserController@create                             | web,auth       |
+|        | DELETE    | users/{user}                 | users.destroy                  | App\Http\Controllers\UserController@destroy                            | web,auth       |
+|        | PUT|PATCH | users/{user}                 | users.update                   | App\Http\Controllers\UserController@update                             | web,auth       |
+|        | GET|HEAD  | users/{user}                 | users.show                     | App\Http\Controllers\UserController@show                               | web,auth       |
+|        | GET|HEAD  | users/{user}/edit            | users.edit                     | App\Http\Controllers\UserController@edit                               | web,auth       |
++--------+-----------+------------------------------+--------------------------------+------------------------------------------------------------------------+----------------+

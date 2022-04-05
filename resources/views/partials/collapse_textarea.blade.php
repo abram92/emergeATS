@@ -1,0 +1,1 @@
+@include('partials.longtext.collapse_textarea_card')

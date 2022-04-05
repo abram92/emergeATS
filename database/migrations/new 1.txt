@@ -1,0 +1,71 @@
+function getStaticJobs($userid, $statusids, $triggerdate, $mindate="") {
+
+// job not sent
+	if (is_array($statusids)) {
+	   $isActiveState = in_array(2, $statusids);
+	   $statusids = implode(', ', $statusids);
+	} else {
+	   $isActiveState = (2 == $statusids) ? true : false;
+	}
+	
+	$candidates = Candidate::where('consultant_id', $userid)->whereIn('status_id', $statusids)->where('activated_at', '<', $triggerdate)
+						->whereHas('jobsCandidateSentTo', function($query) {
+											$query->where('created_at', '<', $triggerdate);
+										}, '=', '0');
+	
+	if ($mindate)
+	  $candidates->where('activated_at', '>' ,$mindate);
+	  
+	
+	$dateRestrict = ($mindate) ? "and j.createdate >= '".$mindate."' " : "";
+	
+	$str = "select j.id, c.name as companyname, j.jobref, js.description as jobstatus, j.jobtitletxt as jobtitle, j.createdate, convert(varchar(12), j.createdate, 106) as uploaddate, j.activeflag ".
+				"from joblisting j, jobstatus js, clntinfo c ".
+					"where j.consultantid=$userid ". $dateRestrict .
+						"and j.activeflag != 10 ". 
+						"and j.activeflag = js.id ".
+						"and j.clientid=c.id  ". 
+ " and j.id not in (select jobid from staticworkalertjobs swj, staticworkalerts sw where swj.alertid = sw.id and j.createdate < sw.timestamp and swj.alertlevel = 3) ".
+						"and j.activeflag in ($statusids) and j.createdate < '".$triggerdate."' ".
+						"and (select max(timestamp) from jobaudit where jobid = j.id) < '".$triggerdate."' ";
+	if ($isActiveState)
+				$str .=	" and not exists (select * from event e, evententitylink el2, evententitylink el1 ".
+										" where e.createdate > j.createdate ".
+										" and (el2.eventid = e.id and el2.entitytypeid=4 and el2.entityid=j.id) ".
+										" and (el1.eventid = e.id and el1.entitytypeid=1 and e.typeid=7 and e.description like 'Emailed CV%')) ";
+				$str .=	"order by j.createdate ";
+
+	$arrayList = VIS_getCursor($str);
+
+    return $arrayList;
+}	
+'
+
+
+CREATE OR REPLACE FUNCTION symbolToText(p_str text) returns text as $$
+  DECLARE out text := '';
+BEGIN
+  select into out regexp_replace($1, '.net', 'dotnet');
+  select into out regexp_replace(out, '.js', 'dotjs');
+  select into out regexp_replace(out, 'c++', 'cplusplus');
+  select into out regexp_replace(out, '#', 'sharp');
+  select into out regexp_replace(out, '/', 'slash');
+  return out;
+END
+$$ LANGUAGE PLPGSQL; 
+
+
+CREATE FUNCTION long_text_trigger() RETURNS trigger AS $$
+begin
+  new.chunk_tokens :=
+     to_tsvector('pg_catalog.english', symbolToText(new.chunk));
+  return new;
+end
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER tsvector_long_text_update BEFORE INSERT OR UPDATE
+    ON long_text_fulls FOR EACH ROW EXECUTE PROCEDURE long_text_trigger();
+
+
+
+ts_chunk_tokens BEFORE INSERT OR UPDATE ON long_text_fulls FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('chunk_tokens', 'pg_catalog.english', 'chunk')");

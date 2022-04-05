@@ -1,0 +1,17 @@
+					<div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group row">
+							<label for="contact" class="col-md-4 text-md-right contactinfoheader" >Contact Info</label>
+
+                            <div class="col-md-6">
+	<div class="table-responsive">
+	<table class="table table-bordered table-striped datatable">
+		<tbody id="contactTable">
+@include('partials.contact_view_grouped')
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+	</div>
+                            </div>
+                        </div>
+						</div>

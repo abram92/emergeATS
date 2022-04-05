@@ -1,0 +1,20 @@
+update job_ads set 
+updated_at = (select max(created_at) from audits
+	where auditable_id = job_ads.id and auditable_type = 'App\JobAd')
+where updated_at is null
+
+update job_ads set 
+created_at = (select min(created_at) from audits
+	where auditable_id = job_ads.id and auditable_type = 'App\JobAd')
+where created_at is null
+
+
+update candidates set 
+updated_at = (select max(created_at) from audits
+	where auditable_id = candidates.id and auditable_type = 'App\Candidate')
+where updated_at is null
+
+update candidates set 
+created_at = (select min(created_at) from audits
+	where auditable_id = candidates.id and auditable_type = 'App\Candidate')
+where created_at is null

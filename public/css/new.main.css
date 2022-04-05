@@ -1,0 +1,379 @@
+html,
+body {
+  overflow: hidden;
+}
+html,
+body,
+.app-div {
+  background: #17181e;
+  height: 100%;
+}
+
+.cover-cam {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  color: #fff;
+  font-size: 40px;
+}
+.float-right {
+  float: right !important;
+}
+
+.color-orange {
+  color: #f18f18;
+}
+.salary-line {
+  border-bottom: 2px solid #f18f18;
+}
+
+.line-across {
+  width: 100%;
+  border-bottom: 2px solid #f18f18 !important;
+}
+.accordion-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accordion-item {
+  margin-bottom: 15px !important;
+  border: hidden !important;
+}
+.accordion-body {
+  background: #ececec;
+  border: hidden !important;
+  width: 97% !important;
+  border-radius: 0px 0px 10px 10px;
+}
+.accordion-button {
+  border: 2px solid #f18f18 !important;
+  background: #fff !important;
+  color: #000 !important;
+  border-radius: 5px !important;
+  outline: hidden !important;
+  box-shadow: none !important;
+}
+
+.font-14 {
+  font-size: 14px !important;
+}
+
+.cover-profile-pic {
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  background-image: url("../assets/nomzamo.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-position: center;
+  box-shadow: silver 0px 3px 7px;
+}
+
+.cover-image {
+  padding: 0px 12px 0px 12px !important;
+}
+.cover-div {
+  height: 200px;
+  position: relative;
+  background-image: url("../assets/profile.jpg");
+  width: 100% !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  background-position: center;
+}
+
+.color-black {
+  color: #000 !important;
+}
+
+.button-padding {
+  padding: 7px !important;
+}
+.button-height {
+  height: 2.4em !important;
+}
+.none-underline {
+  text-decoration: none !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+table tr th {
+  border-top: hidden !important;
+  border-left: hidden !important;
+  border-right: hidden !important;
+  color: grey !important;
+}
+table tr {
+  border: thin solid #ececec !important;
+}
+
+table tr:hover {
+  background: #ffdb99;
+  cursor: pointer;
+  border: thin solid #ffc04c !important;
+  border-right: hidden !important;
+  border-left: hidden !important;
+}
+.profile-pic img {
+  width: 30px;
+}
+
+.content-container {
+  background: #fff;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* .close {
+  background: transparent !important;
+  border: hidden !important;
+  font-size: 30px;
+} */
+
+.candidate-text-field {
+  border-radius: 5px;
+  border: thin solid #dcdcdc;
+  padding: 8px 10px 8px 10px;
+  font-size: 13px;
+  width: 100%;
+  outline: none;
+}
+.status_open_btn,
+.status_close_btn {
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+  border-radius: 100px;
+}
+.status_open_btn {
+  background: #219653;
+}
+
+.status_close_btn {
+  background: #eb5757;
+}
+.font-size-15 {
+  font-size: 15px;
+}
+
+.font-size-17 {
+  font-size: 17px;
+}
+.font-size-12 {
+  font-size: 12px;
+}
+.color-grey {
+  color: grey;
+}
+.profile-pic-candidates img {
+  width: 40px;
+}
+.candidates_table_tr {
+  font-size: 13px;
+}
+.add-new-btn {
+  background: #f2994a !important;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  border: thin solid #f2994a !important;
+}
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+.font-weight-medium {
+  font-weight: 700 !important;
+}
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.candidate-container {
+  box-shadow: silver 0px 3px 8px;
+  border-radius: 10px;
+}
+.search {
+  border: thin solid #dcdcdc;
+  border-radius: 10px;
+  padding: 5px 15px 5px 15px;
+  color: #837f7f;
+}
+.search-field::placeholder {
+  color: #837f7f;
+}
+.search-field {
+  border: hidden;
+  font-size: 14px;
+  outline: none;
+  /* padding: 5px 0px 5px 0px; */
+}
+.side-nav {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nav-rows {
+  padding: 15px;
+  text-align: left;
+  color: #f18f18;
+  border-left: thick solid #17181e;
+  font-size: 14px;
+}
+
+.nav-rows:hover {
+  background: #333;
+  border-left: thick solid #f18f18;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-rows-active {
+  font-size: 14px;
+  padding: 15px;
+  text-align: left;
+  background: #333;
+  border-left: thick solid #f18f18;
+  color: #fff;
+  cursor: pointer;
+}
+
+.app-div {
+  margin: 0px !important;
+  padding-right: 0px !important;
+}
+
+.footer-img img {
+  width: 100% !important;
+}
+.footer-img {
+  position: absolute;
+  z-index: 0;
+  bottom: 0%;
+  left: 0px;
+  padding: 0px !important;
+}
+.checkox-remember-me {
+  color: #fff;
+}
+
+.side-nav-logo img {
+  width: 170px;
+}
+
+.login-logo {
+  margin-bottom: 50px;
+}
+.login-logo img {
+  width: 170px;
+}
+.home-text-input {
+  background: #224957;
+  border: hidden;
+  color: #fff;
+  outline: none;
+  margin-bottom: 25px;
+}
+
+.home-text-input::placeholder {
+  color: #fff;
+}
+
+.text-input {
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.login-button {
+  margin-top: 15px;
+  width: 100%;
+  color: #fff !important;
+  font-weight: 550 !important;
+  border-radius: 10px !important;
+  outline: none !important;
+  box-shadow: hidden !important;
+  background: #f18f18 !important;
+  border: thin solid #f18f18 !important;
+}
+
+.login-button:hover {
+  background: orange;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  color: #f18f18;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+.forgot-password-text-align {
+  text-align: right;
+}
+
+.checkbox-align {
+  text-align: left;
+}
+
+@media screen and (max-width: 990px) {
+  .login-logo {
+    margin-top: 15px;
+  }
+  .c {
+    position: relative;
+    z-index: 0;
+    bottom: 0%;
+    left: 0px;
+    padding: 0px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cover-profile-pic {
+    height: 150px;
+    width: 150px;
+    left: 27%;
+  }
+  .login-logo {
+    margin-top: 15px;
+  }
+  .footer-img {
+    position: absolute;
+    z-index: 0;
+    bottom: 0%;
+    left: 0px;
+    padding: 0px !important;
+  }
+  .checkbox-align {
+    text-align: center;
+  }
+
+  .forgot-password-text-align {
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+  }
+
+  .nav-rows {
+    font-size: 20px;
+  }
+}
