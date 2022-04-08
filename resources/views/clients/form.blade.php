@@ -20,13 +20,13 @@
 <div  class="card-deck">
 						<div class="card card-body border-0">
 
-{{-- @include('partials.form_text', ['fieldname'=>'name', 'fieldlabel'=>'Name', 'is_required'=>true, 'is_autofocus'=>true])
+ @include('partials.form_text', ['fieldname'=>'name', 'fieldlabel'=>'Name', 'is_required'=>true, 'is_autofocus'=>true])
 	@include('partials.select2_dropdown_single', ['fieldname'=>'consultant_id',
 									'fieldlabel'=>'Consultant',
 									'fieldplaceholder'=>'Choose Consultant',
 									'required'=>true,
 									'options'=>$consultants,
-									'selectedid'=>isset($client) ? $client->consultant_id : null]) --}}
+									'selectedid'=>isset($client) ? $client->consultant_id : null])
 
 @include('partials.select2_dropdown_single', ['fieldname'=>'status_id',
 									'fieldlabel'=>'Status',

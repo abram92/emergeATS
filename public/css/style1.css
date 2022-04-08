@@ -381,7 +381,7 @@ width : 100%;
 
 
 
-.floating-menu{border-radius: 101px;z-index:999;padding-top:10px;padding-bottom: 16px;left:0;position:fixed;display:inline-block;top: 0;/* -webkit-transform:translateY(-50%); */-ms-transform:translateY(-50%);/* transform:translateY(-50%); */}
+.floating-menu{position: fixed;border-radius: 101px;z-index: var(--z-fixed);padding-top:10px;padding-bottom: 16px;left:0;position:fixed;display:inline-block;top: 0;/* -webkit-transform:translateY(-50%); */-ms-transform:translateY(-50%);/* transform:translateY(-50%); */}
 .main-menu{margin:0;padding-left:0;list-style:none}
 .main-menu li a{display:block;padding:20px;color:#fff;border-radius:50px;position:relative;-webkit-transition:none;-o-transition:none;transition:none}
 .main-menu li a:hover{background:rgba(244,244,244,.3)}
@@ -548,8 +548,8 @@ div[id^="agencynotes"][id$="body"] {
 /* Candidate */
 
 .candidate {
-   background-color: #2c3e50;
-   color: #f2994a;
+   background-color: #f2994a;
+   color: #fff;
 }
 
 
@@ -567,7 +567,7 @@ div[id^="agencynotes"][id$="body"] {
 /* Client */
 
 .client {
-   background-color: #2c3e50;
+   background-color: #333;
    color: #f2994a;
 }
 
@@ -595,8 +595,8 @@ div[id^="agencynotes"][id$="body"] {
 /* Job */
 
 .job {
-   /* background-color: #2c3e50; */
-   color: #f2994a;
+   background-color: #f2994a;
+   color: #fff;
 }
 
 .text-job {
@@ -1012,8 +1012,8 @@ div.stuck button.profile_btn {
 
 .static-prompt {
 	font-style: italic;
-	background-color: #2c3e50;
-	color: white;
+	background-color: #333;
+	color: #f2994a;
 	padding-left: 3px;
 }
 
@@ -1024,8 +1024,8 @@ div.stuck button.profile_btn {
 }
 .location .card-header, .locationheader {
 	font-style: normal;
-	background-color: #fff;
-	color: black;
+	background-color: #333;
+	color: #f2994a;
 }
 
 .jobtitle {
@@ -1041,8 +1041,8 @@ div.stuck button.profile_btn {
 }
 .salary .card-header, .salaryheader {
 	font-style: normal;
-	background-color: #fff;
-	color: black;
+	background-color: #333;
+	color: #f2994a;
 }
 
 .locationheader, .jobtitleheader, .salaryheader {
@@ -1140,7 +1140,7 @@ div.stuck button.profile_btn {
 }
 .fc-basicDay-button{border-radius:0;}
   body {
-    margin: 100px -17px;
+    /* margin: 100px 0px; */
     padding: 0px;
     font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     font-size: 13px;

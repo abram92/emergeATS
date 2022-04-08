@@ -438,7 +438,7 @@ mark,
 }
 
 .list-unstyled {
-  padding-left: 0;
+  padding-left: 3px;
   list-style: none;
 }
 
@@ -10042,7 +10042,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   min-width: 0;
   flex-grow: 1;
   min-height: calc(100vh - 56px);
@@ -10145,9 +10145,9 @@ body {
 }
 
 .sb-sidenav {
-  /* width: 100%; */
+  width: var(--z-fixed);
   display: flex !important;
-  height: 106vh;
+  height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   /* flex-wrap: nowrap; */

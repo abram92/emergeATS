@@ -2,7 +2,7 @@
 
 @php
 $apptype_header = ($jobapp->applicationable_type == 'App\JobAd') ? 'job2' : 'client2';
-	
+
 @endphp
 
 @section('tabheader')
@@ -12,17 +12,17 @@ $apptype_header = ($jobapp->applicationable_type == 'App\JobAd') ? 'job2' : 'cli
 	<div class="col-6">
 		<div class="row">
 			<span class="pr-2"><h5 class="scrollhide">{!! nl2br("Edit Job Application") !!}</h5></span>
-			<span class="badge1 shadow candidate ml-auto mr-1 "> 
+			<span class="badge1 shadow candidate ml-auto mr-1 ">
 				<h4>
 					{{ __($jobapp->candidate->user->listname) }}
 				</h4>
 			</span>
-		</div>		
+		</div>
     </div>
 	<div class="col-6">
 		<div class="row">
 		@if ($jobapp->applicationable_type == 'App\JobAd')
-            <span class="badge1 shadow job ">  
+            <span class="badge1 shadow job ">
 				<h4>
 					{{ __($jobapp->jobad->jobref) }}
 				</h4>
@@ -31,13 +31,13 @@ $apptype_header = ($jobapp->applicationable_type == 'App\JobAd') ? 'job2' : 'cli
 				</h5>
 			</span>
 		@else
-            <span class="badge1 shadow client"> 
+            <span class="badge1 shadow client">
 				<h4>
 					{{ __($jobapp->client->name) }}
 				</h4>
-			</span>	
-		@endif			
-		</div>		
+			</span>
+		@endif
+		</div>
 	</div>
 	</div>
 </div>
@@ -57,17 +57,17 @@ $apptype_header = ($jobapp->applicationable_type == 'App\JobAd') ? 'job2' : 'cli
 
 
     <div class="card card-body">
-	
-@include('partials.select2_dropdown_single', ['fieldname'=>'status_id', 
-									'fieldlabel'=>'Status', 
-									'fieldplaceholder'=>'Choose Status', 
+
+@include('partials.select2_dropdown_single', ['fieldname'=>'status_id',
+									'fieldlabel'=>'Status',
+									'fieldplaceholder'=>'Choose Status',
 									'options'=>$statuses,
 									'selectedid'=>isset($jobapp) ? $jobapp->status_id : null])
 
 
     </div>
 
-				
+
             </div>
 
     <div class="card card-body">
@@ -77,7 +77,7 @@ $apptype_header = ($jobapp->applicationable_type == 'App\JobAd') ? 'job2' : 'cli
 @section('formbuttons')
 								<button type="submit" class="btn btn-success">{{ __('Save') }}</button>
 								<a href="{{ url(Request::segment(1)) }}" class="btn btn-primary">Back</a>
-@endsection			
+@endsection
 @include('partials.footer.formbuttonsSection', ['tag_textarea'=>true])
 @yield('contentbuttons')
 
@@ -89,18 +89,18 @@ $apptype_header = ($jobapp->applicationable_type == 'App\JobAd') ? 'job2' : 'cli
 
 @push('scripts')
 @include('scripts.src_select2')
-@endpush 
-	
+@endpush
+
 @section('js')
 
     <script>
-	
+
 		$("document").ready(function() {
-			
-		@include('scripts.ready_select2')	
-					
+
+		@include('scripts.ready_select2')
+
 		});
-		
-		
+
+
     </script>
 @endsection
